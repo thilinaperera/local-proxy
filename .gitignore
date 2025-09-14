@@ -1,0 +1,4 @@
+certs/*
+.idea
+.DS_Store
+.env
