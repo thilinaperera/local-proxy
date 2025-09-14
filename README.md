@@ -47,7 +47,7 @@ docker network create local-proxy || true
 
 Start Traefik:
 ```bash
-# If your Docker uses Compose v2 you can also run: docker compose -f docker-compose.yml up -d
+# If your Docker uses Compose < v2 you can also run: docker-compose -f docker-compose.yml up -d
 docker compose -f docker-compose.yml up -d
 ```
 
@@ -105,7 +105,7 @@ networks:
 1. Ensure `api.eng-local.app` resolves to `127.0.0.1` (see **Add local domains**).
 2. Start your service and Traefik:
    ```bash
-   docker compose up -d # or: docker compose up -d
+   docker compose up -d # or: docker-compose up -d
    ```
 3. Visit **https://api.eng-local.app/** — you should see your service with a valid lock icon.
 4. Visit **https://traefik.eng-local.app/dashboard/** for routing details.
