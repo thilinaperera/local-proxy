@@ -31,6 +31,8 @@ git clone https://github.com/thilinaperera/local-proxy
 cd local-proxy
 ```
 
+Copy `.env.example` to `.env` and adjust if needed.
+
 Install and generate certificates (first‑time mkcert users must install the local CA):
 ```bash
 # First‑time only
