@@ -20,6 +20,7 @@ services:
       - "traefik.http.routers.traefik.tls=true"
       - "traefik.http.routers.traefik.service=traefik@docker"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+    restart: always
     networks:
       - proxy-network
 
