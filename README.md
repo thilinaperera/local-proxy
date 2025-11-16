@@ -38,6 +38,9 @@ Install and generate certificates (first‑time mkcert users must install the lo
 # First‑time only
 mkcert -install
 
+# Create certs directory
+mkdir -p certs
+
 # Issue a cert for the root domain and all subdomains
 mkcert -cert-file certs/local-cert.pem -key-file certs/local-key.pem "eng-local.app" "*.eng-local.app"
 ```
