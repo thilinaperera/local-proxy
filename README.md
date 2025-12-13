@@ -81,14 +81,14 @@ Open the dashboard:
 ---
 
 ## 🧭 Add local domains (DNS/hosts)
-You’ll access services via domains under `eng-local.app`. Point the names you need to `127.0.0.1`.
+You’ll access services via domains under `<name>.eng-local.app`. Point the names you need to `127.0.0.1`.
 
-**Option A — /etc/hosts (simple):** add explicit names you plan to use
+Add explicit names you plan to use
 
 ``` sh
 127.0.0.1 traefik.eng-local.app
-127.0.0.1 api.eng-local.app
-127.0.0.1 web.eng-local.app
+# 127.0.0.1 api.eng-local.app
+# 127.0.0.1 web.eng-local.app
 ```
 
 > Note: `/etc/hosts` doesn’t support wildcards. Add entries per subdomain you actually use.
