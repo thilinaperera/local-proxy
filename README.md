@@ -32,18 +32,35 @@ cd local-proxy
 ```
 
 Copy `.env.example` to `.env` and adjust if needed.
+```bash
+cp .env.example .env
+```
 
 Install and generate certificates (first‑time mkcert users must install the local CA):
 ```bash
 # First‑time only
 mkcert -install
 
-# Create certs directory
-mkdir -p certs
-
 # Issue a cert for the root domain and all subdomains
-mkcert -cert-file certs/local-cert.pem -key-file certs/local-key.pem "eng-local.app" "*.eng-local.app"
+./create-certs.sh
 ```
+---
+
+Running the script will create a folder called certs with these files:
+-	local-cert.pem
+-	local-key.pem
+
+You can copy these files into your project root and use them with backends like Node.js or tooling such as Vite.
+
+#### Installing the CA on other systems
+Installing in the trust store does not require the CA key, so you can export the CA certificate and use mkcert to install it in other machines.
+
+- Look for the rootCA.pem file in mkcert -CAROOT
+- copy it to a different machine
+- set ``$CAROOT`` to its directory or copy the file to the ``'$CAROOT'`` directory
+- run ``mkcert -install``
+---
+
 
 Create the shared Docker network (Traefik and your apps will attach to this):
 ```bash
