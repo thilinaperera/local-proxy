@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   local-proxy:
-    image: traefik:v3.5.2
+    image: traefik:v3.7.13
     container_name: local-proxy
     ports:
       - "80:80"
